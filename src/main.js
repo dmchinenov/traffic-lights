@@ -19,7 +19,7 @@ const routes = [
       component: Svetofor,
       props: { 
           mainColor: "Brown",
-          seconds: 5,
+          seconds: 10,
       }
   },
   {
@@ -35,7 +35,7 @@ const routes = [
       component: Svetofor,
       props: { 
           mainColor: "OliveDrab",
-          seconds: 5,
+          seconds: 15,
       }
   },
   {
