@@ -60,7 +60,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.1;
+  opacity: 0.3;
   background: gray;
   box-sizing: border-box;
   p {
