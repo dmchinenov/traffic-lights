@@ -20,6 +20,13 @@ export default {
       flashAnimation: false,
     };
   },
+  mounted() {
+    this.enableLight();
+    this.startTimer();
+  },
+  beforeDestroy() {
+    this.stopTimer();
+  },
   methods: {
     enableLight() {
       if (this.color == this.mainColor) {
@@ -41,13 +48,6 @@ export default {
         this.flashAnimation = true;
       }
     },
-  },
-  mounted() {
-    this.enableLight();
-    this.startTimer();
-  },
-  beforeDestroy() {
-    this.stopTimer();
   },
 };
 </script>
@@ -72,21 +72,21 @@ export default {
     opacity: 1;
     &.flash {
       animation: flash;
-      animation-duration: 1.5s;
+      animation-duration: 1s;
       animation-iteration-count: 3;
     }
   }
 }
 
 @keyframes flash {
-  0%,
-  50%,
-  100% {
-    opacity: 1;
-  }
-  25%,
-  75% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 </style>

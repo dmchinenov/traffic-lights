@@ -4,10 +4,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-actions: {},
-mutations: {
-},
 state: {
-    steps: 'red',
-}
+    direction: 'forward',
+},
+getters: {
+    getDirection: state => state.direction
+},
+mutations: {
+    setDirection: (state, value) => state.direction = value
+},
+actions: {},
 })

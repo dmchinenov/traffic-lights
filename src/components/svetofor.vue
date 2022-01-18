@@ -31,31 +31,31 @@ export default {
       colors: ["Brown", "Goldenrod", "OliveDrab"],
     };
   },
-  computed: {
-    getStateSteps() {
-      return this.$store.state.steps;
-    },
+  mounted() {
+    setTimeout(this.switchColor, this.seconds * 1000);
   },
   methods: {
     switchColor() {
       if (this.mainColor == this.colors[0]) {
         this.$router.push("/yellow");
       }
-      if (this.mainColor == this.colors[1] && this.getStateSteps == "red") {
+      if (this.mainColor == this.colors[1] && this.direction == "forward") {
         this.$router.push("/green");
       }
-      if (this.mainColor == this.colors[1] && this.getStateSteps == "green") {
-        this.$store.state.steps = "red";
+      if (this.mainColor == this.colors[1] && this.direction == "back") {
+        this.$store.commit('setDirection', 'forward');
         this.$router.push("/red");
       }
       if (this.mainColor == this.colors[2]) {
-        this.$store.state.steps = "green";
+        this.$store.commit('setDirection', 'back');
         this.$router.push("/yellow");
       }
     },
   },
-  mounted() {
-    setTimeout(this.switchColor, this.seconds * 1000);
+  computed: {
+    direction() {
+      return this.$store.getters.getDirection;
+    },
   },
 };
 </script>
