@@ -1,24 +1,12 @@
-# trueconf
+# Traffic Light
 
-## Project setup
-```
-npm install
-```
+- Vue
+## Demo
 
-### Compiles and hot-reloads for development
+https://dmchinenov.github.io/traffic-lights/
+## Installation
+```sh
+git clone
+npm i
+npm run serve / npm run build
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
